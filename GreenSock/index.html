@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/photoswipe@5.2.2/dist/photoswipe.css"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js" integrity="sha512-VEBjfxWUOyzl0bAwh4gdLEaQyDYPvLrZql3pw1ifgb6fhEvZl9iDDehwHZ+dsMzA0Jfww8Xt7COSZuJ/slxc4Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/gh/sachinchoolur/lightgallery.js@master/dist/js/lightgallery.js" integrity="sha512-ssPi1cTYTwYV0e6IRdIId4ytENOrTDvixXo8l0DaTBAwYw9yD6rk9HU06pWRCoSWSRKwrucdVS/2fMC1getgcg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/gh/sachinchoolur/lg-pager.js@master/dist/lg-pager.js" integrity="sha512-ssPi1cTYTwYV0e6IRdIId4ytENOrTDvixXo8l0DaTBAwYw9yD6rk9HU06pWRCoSWSRKwrucdVS/2fMC1getgcg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/gh/sachinchoolur/lg-autoplay.js@master/dist/lg-autoplay.js" integrity="sha512-ssPi1cTYTwYV0e6IRdIId4ytENOrTDvixXo8l0DaTBAwYw9yD6rk9HU06pWRCoSWSRKwrucdVS/2fMC1getgcg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/gh/sachinchoolur/lg-share.js@master/dist/lg-share.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/gh/sachinchoolur/lg-fullscreen.js@master/dist/lg-fullscreen.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/gh/sachinchoolur/lg-zoom.js@master/dist/lg-zoom.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/gh/sachinchoolur/lg-hash.js@master/dist/lg-hash.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/picturefill/2.3.1/picturefill.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.5.0-beta.5/css/lg-autoplay.min.css" integrity="sha512-LlHSkMTvyRwh1YjzXwk6bxjdt3huGhCyK1vlCC6f7Db/g+2sYXz2YNasyZHnMUgykqPksmD/44DIINhqpWBjig==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+       .text {
+  position: fixed;
+  top: 50vh;    
+  font-family: termina, sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 8vw;
+  text-align: center;
+  width: 100%;
+  transform: translateY(-100%);
+  z-index: 2;
+  color: white;
+   -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: white;
+  z-index: -2;
+}
+
+.outline-text {
+  color: transparent;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: white;
+  z-index: 2;
+}
+   </style>
+   
+    <title>Green Sock</title>
+</head>
+<body>
+    sdfs
+    <h1 aria-hidden="true" class="text outline-text">Scrolly Images</h1>
+<div id="animated-thumbnials">
+<a href="Beach/abdelkader-kherbouche-XrzFxphchos-unsplash.jpg">
+  <img src="Beach/abdelkader-kherbouche-XrzFxphchos-unsplash.jpg">
+</a>
+<a href="Beach/abdelkader-kherbouche-XrzFxphchos-unsplash.jpg">
+  <img src="Beach/abdelkader-kherbouche-XrzFxphchos-unsplash.jpg">
+</a>
+<a href="Beach/abdelkader-kherbouche-XrzFxphchos-unsplash.jpg">
+  <img src="Beach/abdelkader-kherbouche-XrzFxphchos-unsplash.jpg">
+</a>
+<a href="Beach/abdelkader-kherbouche-XrzFxphchos-unsplash.jpg">
+  <img src="Beach/abdelkader-kherbouche-XrzFxphchos-unsplash.jpg">
+</a>
+<a href="Beach/abdulla-faiz-qiLF2SQvlVU-unsplash.jpg">
+  <img src="Beach/abdulla-faiz-qiLF2SQvlVU-unsplash.jpg">
+</a>
+<a href="Beach/abdelkader-kherbouche-XrzFxphchos-unsplash.jpg">
+  <img src="Beach/abdelkader-kherbouche-XrzFxphchos-unsplash.jpg">
+</a>
+</div>
+
+</body>
+<script>
+    import PhotoSwipeLightbox from 'https://unpkg.com/photoswipe/dist/photoswipe-lightbox.esm.js';
+
+
+    const lightbox = new PhotoSwipeLightbox({
+  gallery: '#my-gallery',
+  children: 'a',
+  pswpModule: () => import('https://unpkg.com/photoswipe'),
+});
+
+
+lightGallery(document.getElementById('animated-thumbnials'), {
+        thumbnail:true,
+        animateThumb: false,
+        showThumbByDefault: false
+    }); 
+
+
+lightbox.init();
+
+    var doc = document.querySelector("#world");
+    console.log(" doc ",doc);
+
+    gsap.from('#world',5,{y:100,autoAlpha:0})
+
+</script>
+</html>

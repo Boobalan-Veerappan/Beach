@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
+    <link rel="stylesheet" href="./style.css">
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenLite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollTrigger/1.0.5/ScrollTrigger.min.js" integrity="sha512-m/n857VfrPYUcRvzCfqfrC9aMT06TQA2V0DcX/Ovovrhswa3038FfYmHlB0l/ZMukVyKWmiwZI4Pnnd7v3FwFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/16.1.3/smooth-scroll.min.js" integrity="sha512-HYG9E+RmbXS7oy529Nk8byKFw5jqM3R1zzvoV2JnltsIGkK/AhZSzciYCNxDMOXEbYO9w6MJ6SpuYgm5PJPpeQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+
+    <title>Beach</title>
+</head>
+<body>
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide slide_1" ><span id ="slide_1_text"><div><div id="text_1"> Do you enjoy walking</div> <div id="text_2"> along the sand searching for shells</div> <div id="text_3"> or other signs of sea life?</div></div></span></div>
+          <div class="swiper-slide slide_2"><span id="text_show" x ="-10" y="0" z="0">Beach Ride</span></div>
+          <div class="swiper-slide slide_3"><span id="text_show" x ="0" y="-10" z="0">Beach Party</span></div>
+          <div class="swiper-slide slide_4"><span id="text_show" x ="10" y="0" z="0">Sun Set</span></div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+
+<div style="display: flex; justify-content: center;">
+      <div id="wrapper">
+<h1> Holiday at Beach</h1>
+<div class="box"   >
+<img class="grid-item" src="Beach/colton-duke-V5qPDfTTVL8-unsplash.jpg" width="33.3%" height="250">
+<img class="grid-item" src="Beach/shifaaz-shamoon-hjNkQ3zVGXU-unsplash.jpg" width="33.3%" height="250">
+<img class="grid-item" src="Beach/yoann-boyer-7L0UFeeXXHY-unsplash.jpg" width="33.3%" height="250">
+</div>
+<div class="box">
+  <img src="Beach/oscar-ovalle-pF-8uTLEVC8-unsplash.jpg" width="33.3%" height="250">
+  <img src="Beach/nico-bhlr-mFa4VkCcgA8-unsplash.jpg" width="33.3%" height="250">
+  <img src="Beach/rayyu-maldives-Qv1HnAeoqHs-unsplash.jpg" width="33.3%" height="250">
+</div>
+<div class="box">
+  <img src="Beach/jose-mizrahi-HnjDSSzR8nk-unsplash.jpg" width="33.3%" height="250">
+  <img src="Beach/peter-crabbe-T6gj-mqnOKA-unsplash.jpg" width="33.3%" height="250">
+  <img src="Beach/zeny-rosalina-lZWwcP1Vdbw-unsplash.jpg" width="33.3%" height="250">
+</div>
+<div class="box">
+  <img src="Beach/xavier-coiffic-gOc3VRa-eas-unsplash.jpg" width="33.3%" height="250">
+  <img src="Beach/vu-nguyen-oP6DZnDmrok-unsplash.jpg" width="33.3%" height="250">
+  <img src="Beach/tobias-reich-tKPXuYDUAKg-unsplash.jpg" width="33.3%" height="250">
+</div>
+      </div>
+
+    </div>
+
+    <footer class="footer">
+      &#169; Boobalan Veerappan
+<a style="display: block;">boobalanv2016@gmail.com</a>
+    </footer>
+      <script src="./script.js"></script>
+      <script>
+var doc = document.querySelector("#slide_1_text");
+console.log(" doc !! ",doc);
+// gsap.from("#slide_1_text",3,{y:40,autoAlpha:0})
+
+var timeline = gsap.timeline();
+
+timeline.from("#text_1",3,{x:-10,autoAlpha:0});
+timeline.from("#text_2",2,{x:-10,autoAlpha:0});
+timeline.from("#text_3",1,{x:-10,autoAlpha:0});
+
+
+
+document.querySelector(".swiper-button-prev").addEventListener('click',function() {
+
+ 
+ checkfunction()
+  
+});
+
+document.querySelector(".swiper-button-next").addEventListener('click',function() {
+
+ 
+checkfunction()
+ 
+});
+
+ function checkfunction(){
+  var elem = document.querySelector('.swiper-slide-active');;
+
+  var text_show = elem.querySelector("#text_show");
+
+  let x = text_show.getAttribute("x");
+  let y = text_show.getAttribute("y");
+  let z = text_show.getAttribute("z");
+
+  var timeline1 = gsap.timeline();
+
+
+  timeline1.from(text_show,2,{x:x,y:y,z:z,autoAlpha:0});
+
+
+}
+
+
+var msnry = new Masonry( elem, {
+  // options
+  itemSelector: '.grid-item',
+  columnWidth: 200
+});
+
+
+
+
+      </script>
+</body>
+</html>
